@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({url: "https://api.themoviedb.org/3/movie/popular",contentType : "application/json", data: { api_key: "0857f3bcecfb71367f56290556a3e85c"}, success: function(json){
+            
+            for(a in json){
+console.log(a+"    "+json[a]);
+$("#div1").append("<p>"+a+"    "+json[a]+"</p>");
+$("img").attr("width","500");
+            }
+            
+        }});
+    });
+});
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+
+
+<div >
+    <a href="/movie/363088">
+        
+
+<img class="" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w250_and_h141_face/6P3c80EOm7BodndGBUAJHHsHKrp.jpg" 
+data-srcset="https://image.tmdb.org/t/p/w250_and_h141_face/6P3c80EOm7BodndGBUAJHHsHKrp.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/6P3c80EOm7BodndGBUAJHHsHKrp.jpg 2x" 
+alt="Ant-Man and the Wasp" sizes="165px" srcset="https://image.tmdb.org/t/p/w250_and_h141_face/6P3c80EOm7BodndGBUAJHHsHKrp.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/6P3c80EOm7BodndGBUAJHHsHKrp.jpg 2x" 
+src="https://image.tmdb.org/t/p/w250_and_h141_face/6P3c80EOm7BodndGBUAJHHsHKrp.jpg">
+
+
+
+    </a>
+    <span>
+      <a class="text" href="/movie/363088">
+        <h3>Ant-Man and the Wasp</h3>
+        
+        <p>Evangeline Lilly, Paul Rudd</p>
+      </a>
+    </span>
+  </div>
+
+<button>Get External Content</button>
+
+</body>
+</html>
